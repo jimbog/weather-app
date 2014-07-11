@@ -1,0 +1,15 @@
+template(name="layout")
+    +search
+    .ui.items
+        .item
+            .content
+                .name
+                    | Weather
+                .description
+                    with weather
+                        div The current temperature in {{city}} is {{temperature}}
+
+template(name="search")
+    .ui.action.input
+        input(id="city" type="text" placeholder="chicago")
+        .ui.button Go
