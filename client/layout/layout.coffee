@@ -4,7 +4,10 @@ Template.layout.weather = ->
     console.log results.content
     Session.set('weather', JSON.parse(results.content).main)
   )
-  {city: city, temperature: Session.get('weather').temp }
+  k2c = (k) ->
+    k - 273
+
+  {city: city, temperature: Math.floor(k2c(Session.get('weather').temp)), tempUnit: 'C'}
 
 Template.layout.events
   'click .button': (evt, tmpl) ->

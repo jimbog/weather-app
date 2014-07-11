@@ -7,7 +7,7 @@ template(name="layout")
                     | Weather
                 .description
                     with weather
-                        div The current temperature in {{city}} is {{temperature}}
+                        div The current temperature in {{city}} is {{temperature}}{{tempUnit}}
 
 template(name="search")
     .ui.action.input
