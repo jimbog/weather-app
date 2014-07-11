@@ -1,13 +1,15 @@
 template(name="layout")
     +search
-    .ui.items
-        .item
-            .content
-                .name
-                    | Weather
-                .description
-                    with weather
-                        div The current temperature in {{city}} is {{temperature}}{{tempUnit}}
+    with weather
+        .ui.items
+            .item
+                .image
+                    img(src="{{pic}}")
+                .content
+                    .name
+                        | {{city}}
+                    .description
+                            div The current temperature is {{temperature}}{{tempUnit}}
 
 template(name="search")
     .ui.action.input
