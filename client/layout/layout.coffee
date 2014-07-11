@@ -1,5 +1,5 @@
 Template.layout.weather = ->
-  city = Session.get('city')
+  city = Session.get('city') || 'chicago'
   Meteor.call('getWeather', city, (err, results)->
     console.log results.content
     Session.set('weather', JSON.parse(results.content).main)
