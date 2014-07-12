@@ -1,5 +1,4 @@
-template(name="layout")
-    +search
+template(name="result")
     with weather
         .ui.items
             .item
@@ -7,11 +6,6 @@ template(name="layout")
                     img(src="{{pic}}")
                 .content
                     .name
-                        | {{city}}
+                        | {{name}}
                     .description
                             div The current temperature is {{temperature}}{{tempUnit}}
-
-template(name="search")
-    .ui.action.input
-        input(id="city" type="text" placeholder="chicago")
-        .ui.button Go
